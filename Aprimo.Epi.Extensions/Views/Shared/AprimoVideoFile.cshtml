@@ -1,0 +1,8 @@
+﻿@model Aprimo.Epi.Extensions.Models.AprimoVideoFile
+@using EPiServer.Web.Routing
+@if (Model.BinaryData != null && Model.BinaryData.ID != null)
+{    
+    <video style="width: 100%;" controls>
+        <source src="@Url.ContentUrl(Model.ContentLink)" type="video/mp4">
+    </video>
+}

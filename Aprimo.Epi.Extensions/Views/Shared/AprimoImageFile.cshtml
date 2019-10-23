@@ -1,0 +1,15 @@
+﻿@model Aprimo.Epi.Extensions.Models.AprimoImageFile
+@using EPiServer.Web.Routing
+@if (Model.BinaryData != null && Model.BinaryData.ID != null)
+{
+
+    <div class="thumbnail">
+        <img src="@Url.ContentUrl(Model.ContentLink)" class="img-responsive" alt="@Model.Description" title="@Model.Title" />
+    </div>
+}
+else
+{
+    <div class="thumbnail">
+        <img src="@Url.Content(Model.AprimoPreview)" class="img-responsive" alt="@Model.Description" title="@Model.Title" />
+    </div>
+}

@@ -1,0 +1,90 @@
+﻿@inherits System.Web.Mvc.WebViewPage<Aprimo.Epi.Extensions.Services.AprimoConnectorSettings>
+@using EPiServer.Framework.Web.Resources
+@using EPiServer.Shell.Navigation
+@using System.Web.WebPages
+@using System.Web.Mvc.Html;
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html ng-app="ProfilesApp">
+<head>
+    <title>Admin Plugin</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+
+    <!-- Shell -->
+    @Html.Raw(ClientResources.RenderResources("ShellCore"))
+    @Html.Raw(ClientResources.RenderResources("ShellWidgets"))
+
+    <!-- LightTheme -->
+    @Html.Raw(ClientResources.RenderResources("ShellCoreLightTheme"))
+
+    <!-- Navigation -->
+    @Html.Raw(ClientResources.RenderResources("Navigation"))
+    @Html.Raw(ClientResources.RenderResources("System"))
+    <!-- Dojo Dashboard -->
+    @Html.Raw(ClientResources.RenderResources("DojoDashboardCompatibility", new[] { ClientResourceType.Style }))
+    @*<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">*@
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="epi-contentContainer epi-padding">
+        <div class="epi-contentArea">
+            <h1 class="EP-prefix">
+                Aprimo Settings
+            </h1><p class="EP-systemInfo">The Aprimo settings allows you to set up your connector along with values you want your assets to inherit from aprimo.</p>
+        </div>
+        @using (Html.BeginForm())
+        {
+            <div class="epi-formArea">
+                <div class="epi-size20">
+                    <div>
+                        <label for="AprimoTenantId">Aprimo Environment Name</label>
+                        @Html.TextBoxFor(x => x.AprimoTenantId, new { @class = "episize240" })
+                    </div>
+                    <div>
+                        <label for="AprimoDAMUsername">Username</label>
+                        @Html.TextBoxFor(x => x.AprimoDAMUsername, new { @class = "episize240" })
+                    </div>
+                    <div>
+                        <label for="AprimoDAMClientId">Client ID</label>
+                        @Html.TextBoxFor(x => x.AprimoDAMClientId, new { @class = "episize240" })
+                    </div>
+                    <div>
+                        <label for="AprimoDAMARootClassificationId">Root Classification Id</label>
+                        @Html.TextBoxFor(x => x.AprimoDAMARootClassificationId, new { @class = "episize240" })
+                    </div>
+                    <div>
+                        <label for="AprimoAssetPermalinkFormat">Permalink Format</label>
+                        @Html.TextBoxFor(x => x.AprimoAssetPermalinkFormat, new { @class = "episize240" })
+                    </div>
+                    <div>
+                        <label for="AprimoDAMApiVersion">API Version</label>
+                        @Html.TextBoxFor(x => x.AprimoDAMApiVersion, new { @class = "episize240" })
+                    </div>
+                    <div>
+                        <label for="AprimoDAMUserToken">User Token</label>
+                        @Html.TextBoxFor(x => x.AprimoDAMUserToken, new { @class = "episize240" })
+                    </div>
+                    <div>
+                        <label for="AprimoCallbackHeaderToken">Callback Authorization Token</label>
+                        @Html.TextBoxFor(x => x.AprimoCallbackAuthorizationToken, new { @class = "episize240" })
+                    </div>
+                    <div>
+                        <label for="InformationFields">Information Fields</label>
+                        @Html.TextAreaFor(x => x.InformationFields, new { cols = "50", rows = "10" })
+                    </div>
+                    <div class="epi-indent">
+                        <span class="epi-cmsButton"><input class="epi-cmsButton-text epi-cmsButton-tools epi-cmsButton-Report" type="submit" value="Save" title="Save Aprimo Settings"></span>
+                    </div>
+                </div>
+            </div>
+            @Html.HiddenFor(x => x.Id)
+        }
+    </div>
+</body>
+</html>
