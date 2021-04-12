@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
+  <episerver.shell xdt:Transform="InsertIfMissing">
+    <protectedModules rootPath="~/EPiServer/" xdt:Transform="InsertIfMissing">
+      <add name="Aprimo.Epi.Extensions" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)"/>
+    </protectedModules>
+  </episerver.shell>
+  <appSettings>
+    <add key="AprimoOrderEmail" value="" xdt:Locator="Match(key)" xdt:Transform="InsertIfMissing" />
+    <add key="AprimoDAMUsername" value="" xdt:Locator="Match(key)" xdt:Transform="InsertIfMissing" />
+    <add key="AprimoDAMUserToken" value="" xdt:Locator="Match(key)" xdt:Transform="InsertIfMissing" />
+    <add key="AprimoTenantId" value="" xdt:Locator="Match(key)" xdt:Transform="InsertIfMissing" />
+    <add key="AprimoDAMClientId" value="" xdt:Locator="Match(key)" xdt:Transform="InsertIfMissing" />
+    <add key="AprimoDAMARootClassificationId" value="" xdt:Locator="Match(key)" xdt:Transform="InsertIfMissing" />
+    <add key="AprimoDAMApiVersion" value="1" xdt:Locator="Match(key)" xdt:Transform="InsertIfMissing" />
+    <add key="AprimoAssetPermalinkFormat" value="https://{0}.dam.aprimo.com/dam/contentitems/{1}" xdt:Locator="Match(key)" xdt:Transform="InsertIfMissing" />
+  </appSettings>
+</configuration>

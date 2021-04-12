@@ -1,0 +1,9 @@
+﻿
+.aprimo-loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(20, 86, 241, .65);
+    color: #fff;
+    padding: 3px 6px;
+}
